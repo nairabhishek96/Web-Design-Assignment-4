@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Feedback</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<script src="script.js"></script>
+
+<body>
+	<div id="container">
+
+		<main>
+			<h2>Feeback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<form id="myForm" method="post" onsubmit="nextPage(event)">
+				<label>Title *:</label>
+				<input type="radio" name="title" id="miss" value="miss" required="required" />Miss.
+				<input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs.
+				<br><br>
+
+				<label for="firstName">First Name *:</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name"
+					onblur="validateInputs(this, 1, 'FName')" required size=30 />
+				<br><br>
+
+				<div id="errorMsgFName" style="display: none; color:red;">
+					Invalid input for the First Name field. Please enter a valid First Name.
+					<br><br>
+				</div>
+
+				<label for="lastName">Last Name *:</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name"
+					onblur="validateInputs(this, 2, 'LName')" required size=30 />
+				<br><br>
+
+				<div id="errorMsgLName" style="display: none; color:red;">
+					Invalid input for the Last Name field. Please enter a valid Last Name.
+					<br><br>
+				</div>
+
+				<label for="emailId">Email Id *:</label>
+				<input type="text" name="emailId" id="emailId" placeholder="yourname@northeastern.edu"
+					onblur="validateInputs(this, 3, 'EmailId')" required size=30 />
+				<br><br>
+
+				<div id="errorMsgEmailId" style="display: none; color:red;">
+					Invalid input for the Email Id field. Please enter a valid Email ID.
+					<br><br>
+				</div>
+
+
+				<label for="phoneNumber">Phone Number *:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx"
+					onblur="validateInputs(this, 4, 'PhoneNumber')" required size=30 />
+				<br><br>
+
+				<div id="errorMsgPhoneNumber" style="display: none; color:red;">
+					Invalid input for the Phone Number field. Please enter a valid phone number in xxx-xxx-xxxx format.
+					<br><br>
+				</div>
+
+				<label for="streetAddress1">Street Address 1 *:</label>
+				<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address"
+					onblur="validateInputs(this, 5, 'StreetAddress1')" required size=30 />
+				<br><br>
+
+				<div id="errorMsgStreetAddress1" style="display: none; color:red;">
+					Invalid input for the Street Address1 field. Please enter a valid street address.
+					<br><br>
+				</div>
+
+				<label for="streetAddress2">Street Address 2:</label>
+				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" size=30 />
+				<br><br>
+
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" placeholder="city" onblur="validateInputs(this, 6, 'City')"
+					required size=30 />
+				<br><br>
+
+				<div id="errorMsgCity" style="display: none; color:red;">
+					Invalid input for the City field. Please enter a valid city.
+					<br><br>
+				</div>
+
+				<label for="state">State *:</label>
+				<input type="text" name="state" id="state" placeholder="state" onblur="validateInputs(this, 7, 'State')"
+					required size=30 />
+				<br><br>
+
+				<div id="errorMsgState" style="display: none; color:red;">
+					Invalid input for the State field. Please enter a valid state.
+					<br><br>
+				</div>
+
+				<label for="zipcode">ZipCode *:</label>
+				<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx"
+					onblur="validateInputs(this, 8, 'Zipcode')" required size=30 />
+				<br><br>
+
+				<div id="errorMsgZipcode" style="display: none; color:red;">
+					Invalid input for the Zipcode field. Please enter a valid zipcode in xxxxxx format.
+					<br><br>
+				</div>
+
+				<label for="destination">Favourite Destination Country? *:</label>
+
+				<select name="countryck" id="countryck" onchange="countryCheck()" required>
+					<option value="" disabled selected>Select your option</option>
+					<option value="USA">United States of America</option>
+					<option value="India">India</option>
+					<option value="Canada">Canada</option>
+					<option value="Great Britain">Great Britain</option>
+					<option value="France">France</option>
+				</select>
+				<br><br>
+
+				<div id="USA" style="display: none">
+					<label for="USA">Place in the USA that you enjoyed:</label>
+					<input type='checkbox' id="NewYork" name="source" value="New York" onclick="ratingTextBoxDisplay(this)" />
+					New York
+					<input type='checkbox' id="LosAngeles" name="source" value="Los Angeles"
+						onclick="ratingTextBoxDisplay(this)" />
+					Los Angeles
+					<input type='checkbox' id="Boston" name="source" value="Boston" onclick="ratingTextBoxDisplay(this)" />
+					Boston
+					<br><br>
+				</div>
+
+				<div id="India" style="display: none">
+					<label for="India">Place in India that you enjoyed:</label>
+					<input type='checkbox' id="Mumbai" name="source" value="Mumbai" onclick="ratingTextBoxDisplay(this)" />
+					Mumbai
+					<input type='checkbox' id="Bangalore" name="source" value="Bangalore" onclick="ratingTextBoxDisplay(this)" />
+					Bangalore
+					<input type='checkbox' id="Delhi" name="source" value="Delhi" onclick="ratingTextBoxDisplay(this)" />
+					Delhi
+					<br><br>
+				</div>
+
+				<div id="Canada" style="display: none">
+					<label for="Canada">Place in the USA that you enjoyed:</label>
+					<input type='checkbox' id="Montreal" name="source" value="Montreal" onclick="ratingTextBoxDisplay(this)" />
+					Montreal
+					<input type='checkbox' id="Vancouver" name="source" value="Vancouver" onclick="ratingTextBoxDisplay(this)" />
+					Vancouver
+					<input type='checkbox' id="Toronto" name="source" value="Toronto" onclick="ratingTextBoxDisplay(this)" />
+					Toronto
+					<br><br>
+				</div>
+
+				<div id="GreatBritain" style="display: none">
+					<label for="GreatBritain">Place in the Great Britain that you enjoyed:</label>
+					<input type='checkbox' id="Manchester" name="source" value="Manchester"
+						onclick="ratingTextBoxDisplay(this)" />
+					Manchester
+					<input type='checkbox' id="Chelmsford" name="source" value="Chelmsford"
+						onclick="ratingTextBoxDisplay(this)" />
+					Chelmsford
+					<input type='checkbox' id="Birmingham" name="source" value="Birmingham"
+						onclick="ratingTextBoxDisplay(this)" />
+					Birmingham
+					<br><br>
+				</div>
+
+				<div id="France" style="display: none">
+					<label for="France">Place in the France that you enjoyed:</label>
+					<input type='checkbox' id="Paris" name="source" value="Paris" onclick="ratingTextBoxDisplay(this)" />
+					Paris
+					<input type='checkbox' id="Bordeaux" name="source" value="Bordeaux" onclick="ratingTextBoxDisplay(this)" />
+					Bordeaux
+					<input type='checkbox' id="Marseille" name="source" value="Marseille" onclick="ratingTextBoxDisplay(this)" />
+					Marseille
+					<br><br>
+				</div>
+
+				<br>
+
+				<div id="color" style="display: none">
+					<label for="color">Rating for the place out of 10 *:</label>
+					<input type="text" name="color" id="colors" placeholder="Rating for the selected place out of 10" />
+					<br><br>
+				</div>
+
+				<label for="hear">How did you hear us:</label>
+				<input type='checkbox' id="check1" name="source" value="facebook" /> Facebook
+				<input type='checkbox' id="check2" name="source" value="google" /> Google
+				<input type='checkbox' id="check3" name="source" value="yelp" /> Yelp
+				<br><br>
+
+				<label for="comments">Comments:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+				<br><br>
+
+				<input type="Submit" id="submit">
+				<input type="Reset" id="reset" onclick="clearFields()">
+				<br><br>
+			</form>
+
+			<table id="summary" class="center" style="display:none; align-content: center;">
+				<tr>
+					<th align="center">Fields</th>
+					<th align="center">Values</th>
+				</tr>
+				<tr>
+					<td>Title</td>
+					<td id="title1"></td>
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td id="firstName1"></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td id="lastName1"></td>
+				</tr>
+				<tr>
+					<td>Email Id</td>
+					<td id="emailId1"></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td id="phoneNumber1"></td>
+				</tr>
+				<tr>
+					<td>Street Address 1</td>
+					<td id="streetAddress11"></td>
+				</tr>
+				<tr>
+					<td>Street Address 2</td>
+					<td id="streetAddress21"></td>
+				</tr>
+				<tr>
+					<td>City</td>
+					<td id="city1"></td>
+				</tr>
+				<tr>
+					<td>State</td>
+					<td id="state1"></td>
+				</tr>
+				<tr>
+					<td>ZipCode</td>
+					<td id="zipcode1"></td>
+				</tr>
+
+				<tr>
+					<td>Favourite Destination Country</td>
+					<td id="destination1"></td>
+				</tr>
+				<tr>
+					<td>Favourite City</td>
+					<td id="animalType"></td>
+				</tr>
+				<tr>
+					<td>Rating</td>
+					<td id="color1"></td>
+				</tr>
+				<tr>
+					<td>How did you hear us</td>
+					<td id="hear1"></td>
+				</tr>
+				<tr>
+					<td>Comments</td>
+					<td id="comments1"></td>
+				</tr>
+			</table>
+
+		</main>
+	</div>
+</body>
+
+</html>
